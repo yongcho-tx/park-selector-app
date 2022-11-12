@@ -1,7 +1,113 @@
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { ParksContext } from "../contexts/ParksProvider"
+import Card from "./Card"
 
-const ParksCard = () => {
-  return <div>ParksCard</div>
+const ParksCard = (props) => {
+  const { parksData } = useContext(ParksContext)
+  const [startingPosition, setStartingPosition] = useState(0)
+  const [trialRandParks, setTrialRandParks] = useState([])
+  const [parkHistory, setParkHistory] = useState([])
+  const [showHistory, setShowHistory] = useState(false)
+  const [scrollNumMin, setScrollNumMin] = useState(0)
+  const [scrollNumMax, setScrollNumMax] = useState(0)
+
+  const randomParks = (limit) => {
+    let randParks = []
+    if (parksData.length > 0) {
+      for (let i = startingPosition; i < limit + startingPosition; i++) {
+        let random = parksData[Math.floor(Math.random() * parksData.length)]
+        randParks.push(random)
+      }
+    }
+
+    setParkHistory((prevHistory) => [...prevHistory, ...randParks])
+    console.log(parkHistory)
+    return setTrialRandParks(randParks)
+  }
+  const displayParks = showHistory
+    ? parkHistory &&
+      parkHistory.map((park, index) => {
+        if (index < scrollNumMax && index >= scrollNumMin) {
+          return <Card park={park} />
+        }
+      })
+    : trialRandParks.length === props.cardCount &&
+      trialRandParks.map((park) => {
+        return <Card park={park} />
+      })
+
+  useEffect(() => {
+    setShowHistory(false)
+    setScrollNumMin(parkHistory.length - 6)
+    setScrollNumMax(parkHistory.length)
+    randomParks(props.cardCount)
+  }, [props.cardCount])
+
+  return (
+    <>
+      {parksData.length <= 0 ? (
+        <p>Is loading</p>
+      ) : (
+        <>
+          {showHistory && (
+            <div style={{ textAlign: "center" }}>
+              <h1>
+                {" "}
+                Displaying Parks-list {scrollNumMin + 1} to{" "}
+                {scrollNumMax > parkHistory.length
+                  ? parkHistory.length
+                  : scrollNumMax}{" "}
+                of {parkHistory.length}
+              </h1>
+            </div>
+          )}
+          <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 m-5'>
+            {displayParks}
+          </div>
+          <div className='flex justify-center m-4'>
+            <button
+              className='w-[125px] h-[56px] m-2 rounded bg-blue-200'
+              onClick={() => randomParks(props.cardCount)}
+            >
+              Add {props.cardCount} New Parks To View
+            </button>
+            <button
+              className='w-[125px] h-[56px] m-2 rounded border-spacing-0 border-black bg-red-200'
+              onClick={() => {
+                setShowHistory(true)
+                setScrollNumMin((prevScrollNumMin) =>
+                  prevScrollNumMin - 6 <= 0 ? 0 : prevScrollNumMin - 6
+                )
+                setScrollNumMax((prevScrollNumMax) =>
+                  prevScrollNumMax - 6 <= 6 ? 6 : prevScrollNumMax - 6
+                )
+              }}
+            >
+              Prev Parks
+            </button>
+            <button
+              className='w-[125px] h-[56px] m-2 rounded border bg-green-200'
+              onClick={() => {
+                setShowHistory(true)
+                setScrollNumMin((prevScrollNumMin) =>
+                  prevScrollNumMin >= parkHistory.length - 6
+                    ? prevScrollNumMin
+                    : prevScrollNumMin + 6
+                )
+                setScrollNumMax((prevScrollNumMax) =>
+                  prevScrollNumMax >= parkHistory.length
+                    ? prevScrollNumMax
+                    : prevScrollNumMax + 6
+                )
+              }}
+            >
+              Next Parks
+            </button>
+          </div>
+        </>
+      )}
+    </>
+  )
 }
 
 export default ParksCard
