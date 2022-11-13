@@ -61,7 +61,7 @@ const ParksCard = (props) => {
               </h1>
             </div>
           )}
-          <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 m-5'>
+          <div className='grid p-5 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-5'>
             {displayParks}
           </div>
           <div className='flex justify-center m-4'>

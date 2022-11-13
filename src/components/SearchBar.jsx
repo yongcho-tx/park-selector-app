@@ -1,6 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from "react"
 import { ParksContext } from "../contexts/ParksProvider"
 import Card from "./Card"
+import bgImg from "../assets/mountain-lake.png"
 
 const filterParks = (parkArr, queryString) => {
   if (!queryString) {
@@ -118,7 +119,7 @@ const SearchBar = () => {
   )
   return (
     <>
-      <div className='flex justify-center items-center m-4'>
+      <div className='flex flex-col justify-center items-center m-4'>
         <label htmlFor='header-search'>
           <span className='visually-hidden'>Search National Parks</span>
         </label>
@@ -129,6 +130,7 @@ const SearchBar = () => {
           value={searchQuery}
           onInput={(e) => setSearchQuery(e.target.value)}
         />
+
         <div className='relative inline-block'>
           <button
             className='p-3 text-xs dropbtn'
