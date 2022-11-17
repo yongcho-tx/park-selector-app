@@ -11,7 +11,7 @@ const ParksProvider = (props) => {
 
   const getData = () => {
     axios
-      .get(`http://localhost:8000/parks`)
+      .get(`http://localhost:${process.env.PORT || 8000}/parks`)
       .then((res) => {
         const parks = res.data
         console.log(parks)
