@@ -8,9 +8,9 @@ const Home = (props) => {
   return (
     <div className='w-full flex flex-col'>
       {props.children}
-      <h1 className='text-center text-3xl m-5'>Discover National Parks</h1>
-      <div className='border-black'>
-        <h2 className='flex items-center justify-center mb-5 border border-black py-6'>
+      <h1 className='text-center text-3xl m-8'>Discover National Parks</h1>
+      <div className='border-y-2 flex items-center justify-center p-2'>
+        <h2>
           Input Number of Parks to View:
           <input
             className='border-2 text-center w-[60px] m-3'
@@ -18,8 +18,7 @@ const Home = (props) => {
             ref={parkForm}
           ></input>
           <button
-            className='text-blue-400 border-2 px-6 flex 
-            items-centerhover:bg-[#b1a296] hover:border-[#b1a296]'
+            className='text-blue-400 border-2 px-6 hover:bg-[#b1a296] hover:border-[#b1a296]'
             onClick={(e) => {
               setInputNumber(parkForm.current.value)
             }}
