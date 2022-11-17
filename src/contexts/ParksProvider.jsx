@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+const PORT = process.env.PORT || 8000
 
 const ParksContext = React.createContext()
 
@@ -11,7 +12,7 @@ const ParksProvider = (props) => {
 
   const getData = () => {
     axios
-      .get(`http://localhost:${process.env.PORT || 8000}/parks`)
+      .get(`http://localhost:${PORT}/parks`)
       .then((res) => {
         const parks = res.data
         console.log(parks)
