@@ -20,8 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:backend": "nodemon index.js",
     "start:frontend": "react-scripts start",
+    "start:backend": "nodemon index.js",
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
