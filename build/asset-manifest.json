@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9837bb54.css",
+    "main.js": "/static/js/main.67f38b12.js",
+    "static/media/mountain-lake.png": "/static/media/mountain-lake.96fa2390a2200f23b9ce.png",
+    "static/media/logo.png": "/static/media/logo.e5d973cd5271a9592e3d.png",
+    "index.html": "/index.html",
+    "main.9837bb54.css.map": "/static/css/main.9837bb54.css.map",
+    "main.67f38b12.js.map": "/static/js/main.67f38b12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9837bb54.css",
+    "static/js/main.67f38b12.js"
+  ]
+}
