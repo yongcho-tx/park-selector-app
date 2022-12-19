@@ -4,12 +4,15 @@ const app = express()
 const cors = require("cors")
 const axios = require("axios")
 require("dotenv").config()
+const path = require("path")
 
 const API_KEY = process.env.API_KEY
 
 app.get("/", (req, res) => {
   res.json("hi")
 })
+
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use(cors())
 
@@ -20,6 +23,10 @@ app.get("/parks", (req, res) => {
       res.json(response.data)
     })
     .catch((err) => console.error(err))
+})
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 })
 
 app.listen(PORT, () => {
