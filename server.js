@@ -1,5 +1,6 @@
 const PORT = process.env.PORT || 8000
 const express = require("express")
+const morgan = require("morgan")
 const app = express()
 const cors = require("cors")
 const axios = require("axios")
@@ -12,9 +13,10 @@ const API_KEY = process.env.API_KEY
 //   res.json("hi")
 // })
 
-app.use(express.static(path.join(__dirname, "client", "build")))
-
+app.use(express.json())
+app.use(morgan("dev"))
 app.use(cors())
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.get("/parks", (req, res) => {
   axios
