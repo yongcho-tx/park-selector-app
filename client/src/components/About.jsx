@@ -2,8 +2,8 @@ import React from "react"
 
 const About = () => {
   return (
-    <div className='w-full h-screen bg-emerald-300'>
-      <h1 className='text-center text-3xl p-6'>This is about page</h1>
+    <div className='w-full h-screen bg-slate-100'>
+      <h1 className='text-center text-3xl p-6'>National Parks Picker</h1>
       <div className='m-6'>
         <p className='mb-3'>
           This website is built with React and Tailwindcss. The website uses the
