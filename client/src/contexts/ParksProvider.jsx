@@ -11,8 +11,9 @@ const ParksProvider = (props) => {
   const [toVisit, setToVisit] = useState([])
 
   const getData = () => {
+    console.log(process.env.NODE_ENV)
     axios
-      .get(`http://localhost:${PORT}/parks`)
+      .get(`/parks`)
       .then((res) => {
         const parks = res.data
         console.log(parks)
