@@ -2,6 +2,7 @@ import React, { useState, useContext, useRef, useEffect } from "react"
 import { ParksContext } from "../contexts/ParksProvider"
 import Card from "./Card"
 import bgImg from "../assets/mountain-lake.png"
+import { BsSearch } from "react-icons/bs"
 
 const filterParks = (parkArr, queryString) => {
   if (!queryString) {
@@ -98,6 +99,7 @@ const SearchBar = () => {
   }
 
   window.onclick = function (event) {
+    console.log("you clicked")
     if (!event.target.matches(".dropbtn")) {
       let dropdowns = document.getElementsByClassName("dropdown-content")
       let i
@@ -119,30 +121,30 @@ const SearchBar = () => {
   )
   return (
     <>
-      <div className='flex flex-col justify-center items-center m-4'>
-        <label htmlFor='header-search'>
-          <span className='visually-hidden'>Search National Parks</span>
-        </label>
+      <div className='flex justify-center items-center m-4'>
+        <label htmlFor='header-search'></label>
+        <BsSearch className='relative left-12' />
         <input
-          className='h-7 w-[500px] m-3 border border-black rounded p-2'
+          className='h-7 w-[500px] m-5 border border-black rounded p-6 input-box'
           type='text'
-          placeholder='search national parks'
+          placeholder='Search national parks'
           value={searchQuery}
           onInput={(e) => setSearchQuery(e.target.value)}
         />
 
         <div className='relative inline-block'>
           <button
-            className='p-3 text-xs dropbtn'
+            className='dropbtn bg-blue-300  rounded-md'
             onClick={() => {
               dropDown()
             }}
           >
-            Dropdown
+            States
           </button>
-          <div id='myDropdown' className='hidden min-w-[160px]'>
+          <div id='myDropdown' className='dropdown-content'>
             {states.map((state) => (
               <button
+                className='block py-2'
                 onClick={(e) => {
                   setSearchQuery((prevQuery) => e.target.name)
                   return setChosenState((prevState) => e.target.name)

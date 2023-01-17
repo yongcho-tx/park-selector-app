@@ -9,10 +9,6 @@ const path = require("path")
 
 const API_KEY = process.env.API_KEY
 
-// app.get("/", (req, res) => {
-//   res.json("hi")
-// })
-
 app.use(express.json())
 app.use(morgan("dev"))
 app.use(cors())

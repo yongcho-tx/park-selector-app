@@ -9,11 +9,13 @@ const Navbar = () => {
   return (
     <div className='w-full h-[5em] flex justify-between items-center px-4 bg-cyan-500 text-neutral-100'>
       <div>
-        <img
-          src={Logo}
-          alt='Logo Img'
-          style={{ width: "60px", borderRadius: "30px" }}
-        />
+        <a href='https://yong-cho.com/' target='blank'>
+          <img
+            src={Logo}
+            alt='Logo Img'
+            style={{ width: "60px", borderRadius: "30px" }}
+          />
+        </a>
       </div>
       <ul className='hidden md:flex'>
         <li>

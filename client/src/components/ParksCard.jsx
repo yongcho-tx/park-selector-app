@@ -66,7 +66,7 @@ const ParksCard = (props) => {
           </div>
           <div className='flex justify-center m-4'>
             <button
-              className='w-[125px] h-[56px] m-2 rounded bg-blue-200'
+              className='w-[fit] h-[56px] m-2 rounded bg-blue-200'
               onClick={() => randomParks(props.cardCount)}
             >
               Add {props.cardCount} New Parks To View
