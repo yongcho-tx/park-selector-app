@@ -10,7 +10,7 @@ const Home = (props) => {
       {props.children}
       <h1 className='text-center text-3xl m-8'>Discover National Parks</h1>
       <div className='border-y-2 flex items-center justify-center p-2'>
-        <h2>
+        <h2 className='text-center'>
           Input Number of Parks to View:
           <input
             className='border-2 text-center w-[60px] m-3'
