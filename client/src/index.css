@@ -13,6 +13,10 @@
     @apply px-4;
     @apply cursor-pointer;
   }
+
+  h3 {
+    @apply text-center;
+  }
 }
 
 .dropbtn:hover,

@@ -13,7 +13,7 @@ const Stats = () => {
           <h3 className='text-lg font-semibold'>
             # of parks available to Visit: 467
           </h3>
-          <h3 className='text-lg font-semibold'>
+          <h3 className='text-lg font-semibold -indent-[3.9em]'>
             # of parks you visited: {visited.length}
           </h3>
 
@@ -31,7 +31,7 @@ const Stats = () => {
               </li>
             ))}
           </ul>
-          <h3 className='text-lg font-semibold'>
+          <h3 className='text-lg font-semibold -indent-[1.4em]'>
             # of parks you want to visit: {toVisit.length}{" "}
           </h3>
         </div>
