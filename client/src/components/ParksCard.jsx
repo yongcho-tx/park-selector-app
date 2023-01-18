@@ -70,7 +70,7 @@ const ParksCard = (props) => {
               type='button'
               data-mdb-ripple='true'
               data-mdb-ripple-color='light'
-              className='inline-block px-6 py-2.5 bg-sky-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-500 hover:shadow-lg focus:bg-sky-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-600 active:shadow-lg transition duration-150 ease-in-out'
+              className='inline-block mx-3 font-normal px-6 py-2.5 bg-sky-400 text-white sm:font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-500 hover:shadow-lg focus:bg-sky-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-600 active:shadow-lg transition duration-150 ease-in-out'
               onClick={() => randomParks(props.cardCount)}
             >
               Add {props.cardCount} New Parks To View
@@ -98,7 +98,7 @@ const ParksCard = (props) => {
               type='button'
               data-mdb-ripple='true'
               data-mdb-ripple-color='light'
-              className='inline-block px-6 py-3.5 bg-sky-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-500 hover:shadow-lg focus:bg-sky-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-600 active:shadow-lg transition duration-150 ease-in-out'
+              className='inline-block mx-3 px-6 py-3.5 bg-sky-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-sky-500 hover:shadow-lg focus:bg-sky-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-600 active:shadow-lg transition duration-150 ease-in-out'
               onClick={() => {
                 setShowHistory(true)
                 setScrollNumMin((prevScrollNumMin) =>

@@ -156,7 +156,7 @@ const SearchBar = () => {
         </div>
       </div>
       <div className='ml-4'>
-        <div className='grid grid-cols-3 gap-4 rounded-lg'>
+        <div className='grid p-5 sm:grid-cols-2 lg:grid-cols-3 gap-8 m-5'>
           {filteredParks2.map((park) => (
             <Card park={park} />
           ))}
