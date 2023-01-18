@@ -9,7 +9,7 @@ const Stats = () => {
         <h1 className='text-4xl p-8 text-center'>
           Visited Parks + Wishlist + Stats
         </h1>
-        <div className='mx-14'>
+        <div className='text-center'>
           <h3 className='text-lg font-semibold'>
             # of parks available to Visit: 467
           </h3>
