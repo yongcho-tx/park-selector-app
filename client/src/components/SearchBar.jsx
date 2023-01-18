@@ -24,8 +24,7 @@ const filterParks = (parkArr, queryString) => {
 }
 
 const SearchBar = () => {
-  const { parksData, visited, toVisit, setVisited, setToVisit } =
-    useContext(ParksContext)
+  const { parksData } = useContext(ParksContext)
   const [searchQuery, setSearchQuery] = useState("")
   const [filteredParks2, setFilteredParks2] = useState([])
   const [chosenState, setChosenState] = useState("")
@@ -123,7 +122,6 @@ const SearchBar = () => {
     <>
       <div className='flex justify-center items-center m-4'>
         <label htmlFor='header-search'></label>
-        <BsSearch className='relative left-12' />
         <input
           className='h-7 w-[500px] m-5 border border-black rounded p-6 input-box'
           type='text'

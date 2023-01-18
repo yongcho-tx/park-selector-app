@@ -18,7 +18,7 @@ const Home = (props) => {
             ref={parkForm}
           ></input>
           <button
-            className='text-blue-400 border-2 px-6 hover:bg-[#b1a296] hover:border-[#b1a296]'
+            className='inline-block px-6 py-2 bg-green-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-500 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-sky-600 active:shadow-lg transition duration-150 ease-in-out'
             onClick={(e) => {
               setInputNumber(parkForm.current.value)
             }}

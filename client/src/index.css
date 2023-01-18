@@ -45,12 +45,7 @@ button {
   text-decoration: none;
   border: none;
 }
-/* .dropdown-content button {
-  display: block;
-  padding: 2px 3px;
-  text-decoration: none;
-  border: none;
-} */
+
 .dropdown-content button:hover {
   background: #4b566c;
   color: white;
@@ -61,10 +56,4 @@ button {
 
 .show {
   display: block;
-}
-
-.input-box::placeholder {
-  position: relative;
-  left: 20px;
-  font-size: large;
 }
