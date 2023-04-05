@@ -1,8 +1,6 @@
 import React, { useState, useContext, useRef, useEffect } from "react"
 import { ParksContext } from "../contexts/ParksProvider"
 import Card from "./Card"
-import bgImg from "../assets/mountain-lake.png"
-import { BsSearch } from "react-icons/bs"
 
 const filterParks = (parkArr, queryString) => {
   if (!queryString) {
@@ -23,11 +21,12 @@ const filterParks = (parkArr, queryString) => {
   })
 }
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const { parksData } = useContext(ParksContext)
   const [searchQuery, setSearchQuery] = useState("")
   const [filteredParks2, setFilteredParks2] = useState([])
   const [chosenState, setChosenState] = useState("")
+
   const states = [
     "AK",
     "AL",
@@ -132,7 +131,7 @@ const SearchBar = () => {
 
         <div className='relative inline-block'>
           <button
-            className='dropbtn bg-blue-300  rounded-md'
+            className='dropbtn bg-blue-300 rounded-md'
             onClick={() => {
               dropDown()
             }}

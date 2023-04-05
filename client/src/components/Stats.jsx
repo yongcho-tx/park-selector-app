@@ -37,7 +37,7 @@ const Stats = () => {
         </div>
         <ul>
           {toVisit.map((item) => (
-            <li>
+            <li className='text-center'>
               <a
                 className='hover:bg-green-200'
                 target='_blank'
